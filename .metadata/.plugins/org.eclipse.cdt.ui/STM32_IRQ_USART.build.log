@@ -1,10 +1,17 @@
-16:19:29 **** Incremental Build of configuration Debug for project STM32_IRQ_USART ****
+17:05:26 **** Incremental Build of configuration Debug for project STM32_IRQ_USART ****
 make -j20 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM32_IRQ_USART.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Zehta\Documents\Repository\STM32_IRQ_USART\STM32_IRQ_USART\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_IRQ_USART.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM32_IRQ_USART.elf
+ 
 arm-none-eabi-size  STM32_IRQ_USART.elf 
+arm-none-eabi-objdump -h -S STM32_IRQ_USART.elf  > "STM32_IRQ_USART.list"
    text	   data	    bss	    dec	    hex	filename
-  14412	    104	   2064	  16580	   40c4	STM32_IRQ_USART.elf
+  12296	     16	   1728	  14040	   36d8	STM32_IRQ_USART.elf
 Finished building: default.size.stdout
  
+Finished building: STM32_IRQ_USART.list
+ 
 
-16:19:29 Build Finished. 0 errors, 0 warnings. (took 191ms)
+17:05:27 Build Finished. 0 errors, 0 warnings. (took 660ms)
 

@@ -50,7 +50,7 @@ uint32_t start_time = 0;
 uint32_t end_time = 0;
 uint32_t elapsed_time = 0;
 
-uint8_t uart_tx_done = 1;
+uint8_t uart_tx_done = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -81,7 +81,7 @@ void UART_Send_IT(char *message)
 // Callback function for UART transmission complete
 void Hal_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 {
-  uart_tx_done = 1; // Set the flag to indicate transmission is complete
+  uart_tx_complete = 1; // Set the flag to indicate transmission is complete  
 }
 /* USER CODE END 0 */
 
