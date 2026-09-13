@@ -106,12 +106,13 @@ int main(void)
   {
     HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET); // Turn on the LED
     start_time = __HAL_TIM_GET_COUNTER(&htim2);  // Get the current timer count
-    printf("This is a test message from STM32 using USART2!!!\r\n");  // Send a message over USART2
+    //printf("This is a test message from STM32 using USART2!!!\r\n");  // Send a message over USART2
+    HAL_Delay(20);
     end_time = __HAL_TIM_GET_COUNTER(&htim2); // Get the timer count after sending the message
     HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);  // Turn off the LED
     elapsed_time = end_time - start_time; // Calculate the elapsed time
     printf("Elapsed time: %lu timer ticks\r\n", elapsed_time);  // Print the elapsed time
-    HAL_Delay(20);
+
 
     /* USER CODE END WHILE */
 
